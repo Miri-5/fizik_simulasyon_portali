@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiziksel Simülasyonlar Portalı</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiziksel Simülasyonlar Portalı</h1>
+        <button id="theme-toggle">🌙 Tema Değiştir</button>
+    </header>
+    <main>
+        <section id="description">
+            <p>Bu portal, fiziksel olayları simüle etmenize ve analiz etmenize olanak tanır.</p>
+        </section>
+        <section id="simulation">
+            <div class="simulation-box">
+                <img id="simulation-image" src="images/placeholder.png" alt="Simülasyon Görseli" width="200">
+            </div>
+            <button id="start-simulation">Simülasyonu Başlat</button>
+            <button id="reset-simulation">Sıfırla</button>
+        </section>
+    </main>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const startButton = document.getElementById('start-simulation');
+        const resetButton = document.getElementById('reset-simulation');
+        const simulationImage = document.getElementById('simulation-image');
+
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        startButton.addEventListener('click', () => {
+            simulationImage.src = 'images/simulation_running.png'; // Simülasyon başlatıldığında değişecek görsel
+        });
+
+        resetButton.addEventListener('click', () => {
+            simulationImage.src = 'images/placeholder.png'; // Simülasyonu sıfırlayınca eski haline döner
+        });
+    </script>
+    <nav>
+        <ul>
+            <li><a href="#sim1">Simülasyon 1</a></li>
+            <li><a href="#sim2">Simülasyon 2</a></li>
+            <li><a href="#about">Hakkında</a></li>
+        </ul>
+    </nav>
+    <section id="sim1">
+        <h2>Simülasyon 1</h2>
+        <div class="simulation-box">
+            <img src="images/simulation1.png" alt="Simülasyon 1" width="200">
+        </div>
+    </section>
+    
+    <section id="sim2">
+        <h2>Simülasyon 2</h2>
+        <div class="simulation-box">
+            <img src="images/simulation2.png" alt="Simülasyon 2" width="200">
+        </div>
+    </section>
+    
+    <section id="about">
+        <h2>Hakkında</h2>
+        <p>Bu portal, kullanıcıların çeşitli fiziksel simülasyonlar yapmalarına imkan sağlar.</p>
+    </section>
+    <section>
+        <h2>Hız Ayarı</h2>
+        <input type="range" id="speed-control" min="1" max="10" value="5">
+        <label for="speed-control">Hız: <span id="speed-value">5</span></label>
+    </section>
+    
+    <script>
+        const speedControl = document.getElementById('speed-control');
+        const speedValue = document.getElementById('speed-value');
+        
+        speedControl.addEventListener('input', () => {
+            speedValue.textContent = speedControl.value;
+        });
+    </script>
+            
+</body>
+</html>

@@ -1,0 +1,79 @@
+/* Temalar ve geçişler */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    background-color: #222;
+    color: #fff;
+}
+
+/* Header - başlık */
+header {
+    padding: 20px;
+    background: linear-gradient(to right, #ff8c00, #ff0080);
+    color: white;
+}
+
+/* Tema butonu */
+#theme-toggle {
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+#theme-toggle:hover {
+    background-color: #ddd;
+}
+
+/* Simülasyon alanı */
+.simulation-box {
+    width: 80%;
+    max-width: 600px;
+    height: 300px;
+    margin: 20px auto;
+    border: 2px dashed #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    transition: background 0.3s;
+}
+
+/* Dark mode için simülasyon kutusu */
+.dark-mode .simulation-box {
+    background-color: #444;
+    border-color: #fff;
+}
+
+/* Butonlar */
+button {
+    padding: 10px 15px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ff8c00;
+    color: white;
+}
+
+/* Görsel boyutlandırma */
+#simulation-image {
+    max-width: 100%;
+    height: auto;
+}
